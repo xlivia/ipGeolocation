@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="Liv">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <style>
+            #map {
+                height: 700px;
+                width: 80%;
+                margin-top: 1%;
+                margin-bottom: 2%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+
+        <script>
+            function ipfindWebSearch() {
+                let xmlhttp = new XMLHttpRequest();
+                let ip_address = document.getElementById("input-ip-address").value;
+                let auth = '650b3015-2e71-48aa-9195-f6d1cfa9ecc2';
+                let url = "https://ipfind.co/?auth=" + auth + "&ip=" + ip_address;
+
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var result = JSON.parse(this.responseText);
+                        addPin(result.ip_address, result.latitude, result.longitude);
+                    }
+                };
+
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
+
+            }
+
+            function addPin(ip, lat, long) {
+                L.marker([lat, long], 15).addTo(map).bindPopup(ip).openPopup();
+            }
+        </script>
+
+        <title>IP Geolocation</title>
+
+    </head>
+
+    <body class="mystylebody">
+
+        <header>IP Geolocation</header>
+
+        <div class="ipinputsearch">
+            IP Lookup
+            <input id="input-ip-address" type="text" placeholder="65.92.189.9" value="65.92.189.9">
+            <button onclick="ipfindWebSearch()" type="submit">Get IP info</button>
+        </div>
+
+        <div id="map">
+            <script>
+                var map = L.map('map').setView([51.505, -0.09], 15);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+            </script>
+        </div>
+
+    </body>
+
+</html>

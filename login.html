@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="Olivia">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel='stylesheet' href='css/darkmode.css' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+
+        <script src="js/functional.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <style>
+            input[type=text], input[type=password] {
+                /* Full-width input fields */
+                width: 50%;
+                padding: 10px;
+                margin: 10px;
+                margin-bottom: 30px;
+                display: inline-block;
+                border: 1px solid mediumslateblue;
+                box-sizing: border-box;
+                border-radius: 10px;
+            }
+
+            button {
+                /* Set a style for all buttons */
+                background-color: mediumslateblue;
+                color: rgb(204, 200, 233);
+                padding: 20px;
+                margin: 10px 5px;
+                border: 10px;
+                cursor: pointer;
+                width: max-content;
+                border-radius: 10px;
+            }
+
+            button:hover {
+              opacity: 0.8;
+            }
+
+            button:active {
+                opacity: 0.9;
+            }
+
+            .container {
+                padding: 16px;
+            }
+
+            span.psw {
+                float: right;
+                padding-top: 16px;
+            }
+
+            .modal {
+                /* The Modal (background) */
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: black; /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                padding-top: 60px;
+            }
+
+            .userIpMappingInfo {
+                display: none;
+            }
+
+            .modal-content {
+                /* Modal Content/Box */
+                background-color: slateblue;
+                margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+                border: 1px solid mediumslateblue;
+                width: 80%; /* Could be more or less, depending on screen size */
+            }
+
+            .close {
+                /* The Close Button (x) */
+                position: absolute;
+                right: 25px;
+                top: 0;
+                color: black;
+                font-size: 35px;
+                font-weight: bold;
+            }
+
+            .close:hover, .close:focus {
+                color: red;
+                cursor: pointer;
+            }
+
+            .animate {
+                /* Add Zoom Animation */
+                -webkit-animation: animatezoom 0.6s;
+                animation: animatezoom 0.6s
+            }
+
+            @-webkit-keyframes animatezoom {
+                from {-webkit-transform: scale(0)} 
+                to {-webkit-transform: scale(1)}
+            }
+
+            @keyframes animatezoom {
+                from {transform: scale(0)} 
+                to {transform: scale(1)}
+            }
+
+            @media screen and (max-width: 300px) {
+                /* Change styles for span and cancel button on extra small screens */
+                span.psw {
+                    display: block;
+                    float: none;
+                }
+                .cancelbtn {
+                    width: 100%;
+                }
+            }
+        </style>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <title>IP Geolocation - CCPS 530 BB0 Web Systems Development</title>
+
+    </head>
+
+    <body class="mystylebody">
+
+        <header>IP Geolocation</header>
+        <p class="loginformstyle">
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+        </p>
+
+        <div id="id01" class="modal">
+
+            <form class="modal-content animate" action="map.html" method="get">
+
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                </div>
+
+                <div class="container">
+                    <label for="uname">Username</label>
+                    <input id="displayNameUser" type="text" placeholder="Enter Any Username For Your Display" name="uname" required>
+                    <br>
+                    <label for="psw">Password</label>
+                    <input type="password" placeholder="Enter Any Password Not A Real One" name="psw" required>
+                    <br>
+                    <button onclick="displayUserName()" type="submit">Login</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,162 @@
+body.mystylebody {
+    background-color: rgb(95, 61, 139);
+    background-size: auto;
+    color: darkslateblue;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0%;
+}
+
+header {
+    background-color: rgb(140, 90, 205);
+    font-size: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+}
+
+p.loginformstyle {
+    background-color: rgb(158, 101, 232);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin: 0%;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+p.ipinputsearch {
+    color: darkslateblue;
+    background-color: mediumslateblue;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    height: max-content;
+    width: max-content;
+    margin: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+div.ipinputsearch {
+    color: darkslateblue;
+    background-color: mediumslateblue;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    height: max-content;
+    width: max-content;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+div.ipinputsearch p {
+    color: darkslateblue;
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.ipinputsearch input {
+    color: slateblue;
+    background-color: rgb(204, 200, 233);
+    font-size: 16px;
+    font-weight: normal;
+    margin: 10px;
+    border: 0px;
+    border-width: 0px;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+div.ipinputsearch button, div.ipinputsearch button:visited {
+    color: rgb(204, 200, 233);
+    background-color: slateblue;
+    height: max-content;
+    width: max-content;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration-line: none;
+    margin: 10px;
+    border: 5px;
+    border-color: slateblue;
+    border-style: outset;
+    border-width: 5px;
+    border-radius: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+div.ipinputsearch button:hover {
+    color: rgb(204, 200, 233);
+    background-color: rgb(87, 74, 171);
+    height: max-content;
+    width: max-content;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration-line: none;
+    margin: 10px;
+    border: 5px;
+    border-color: rgb(87, 74, 171);
+    border-style: inset;
+    border-width: 5px;
+    border-radius: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+div.ipinputsearch button:active {
+    color: rgb(204, 200, 233);
+    background-color: darkslateblue;
+    height: max-content;
+    width: max-content;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration-line: none;
+    margin: 10px;
+    border: 5px;
+    border-color: darkslateblue;
+    border-style: inset;
+    border-width: 5px;
+    border-radius: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+#map {
+    height: 500px;
+    width: 80%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+iframe {
+    display: block;
+    float: center;
+    height: 450px;
+    width: 600px;
+    margin: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px;
+}
